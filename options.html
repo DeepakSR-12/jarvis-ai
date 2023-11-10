@@ -1,20 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarvis AI - Options</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
 
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+      }
 
-<body>
-    <h1>Jarvis AI</h1>
-    <form id="options-form">
+      h1 {
+        color: #333;
+      }
+
+      #options-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      button {
+        background-color: #ee3e38;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #ec5f5a;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div class="title">
+        <img src="icon48.png" alt="logo" width="40" height="30" />
+        <h1>Jarvis AI</h1>
+      </div>
+      <form id="options-form">
         <div>
-            <label for="api-key">OpenAI API Key:</label>
-            <input type="text" id="api-key" name="api-key">
+          <label for="api-key">Enter your OpenAI API Key:</label>
+          <input
+            type="text"
+            id="api-key"
+            name="api-key"
+            placeholder="Your API Key"
+          />
         </div>
         <button type="submit">Save</button>
-    </form>
+      </form>
+    </div>
     <script src="options.js"></script>
-</body>
-
+  </body>
 </html>

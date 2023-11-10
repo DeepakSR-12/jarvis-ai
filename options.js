@@ -1,17 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("options-form")
-    .addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const apiKey = document.getElementById("api-key").value;
-      chrome.storage.sync.set({ apiKey }, () => {
-        alert("API key saved!");
-      });
+  const optionsForm = document.getElementById("options-form");
+  const apiKeyInput = document.getElementById("api-key");
+
+  optionsForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const apiKey = apiKeyInput.value.trim();
+
+    if (!apiKey) {
+      alert("Please enter a valid API key.");
+      return;
+    }
+
+    chrome.storage.sync.set({ apiKey }, () => {
+      alert("API key saved!");
     });
+  });
 
   chrome.storage.sync.get("apiKey", (data) => {
-    if (data.apiKey) {
-      document.getElementById("api-key").value = data.apiKey;
+    const savedApiKey = data.apiKey;
+
+    if (savedApiKey) {
+      apiKeyInput.value = savedApiKey;
     }
   });
 });
